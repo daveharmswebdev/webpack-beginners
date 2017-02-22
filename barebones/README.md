@@ -39,6 +39,8 @@ We create a config file and then export it (we could have easily just exported, 
 
 ## Executing Webpack
 
+We execute with `npm run build` (or yarn) which calls the following script: `"build": "webpack"`. Is it mandatory to run webpack locally? I'm not sure, I simply prefer it. Grider prefers it, and so do most blog writers. The reason is version control.
+
 ``` bash
 > barebones@1.0.0 build /Users/dave/beginners/webpack-beginners/barebones
 > webpack
@@ -51,3 +53,4 @@ bundle.js  2.72 kB       0  [emitted]  main
    [0] ./src/sum.js 51 bytes {0} [built]
    [1] ./src/index.js 77 bytes {0} [built]
 ```
+The last three lines tell the story that bundle.js was created and it was created from two files below it, and that bundle.js file is literally greater than the sum of its parts. The reason is obvious after inspecting bundle.js.
