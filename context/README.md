@@ -41,5 +41,7 @@ A simple, effective way to run Browserify is as an NPM script written in the pac
 ```
 This project installs browserify for the build, and watchify for the watching browserify used in development. The script calls the command with the first argument as the 'entry' file, in this case 'src/index.js' which is convention. Following the entry point is the -o flag followed by the output/destination. `browserify src/index.js -o dist/bundle.js -v` will take index.js and all it's required modules and it bundle it into dist/bundle.js. The `-v` flag stands for verbose, a report will print out in the terminal as browserify executes. The `-d` flag in the watch script stands for debug, meaning that Browserify will create source maps when you are developing your project.
 
+You should be able run npm install and then run one of the scripts to test out browswerify.
+
 
 
