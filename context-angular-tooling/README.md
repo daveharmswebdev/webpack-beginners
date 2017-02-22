@@ -46,8 +46,11 @@ gulp.task('default', function(){
 		.pipe(gulp.dest('bin/js'))
 })
 ```
-Like Browserify and Webpack, Gulp declares an entry point, but instead of a file it's an entire directory. For this project we are declaring the `/js` directory. If we look at the last .pipe chain we see the destination directory: `bin/js`. The name of the file is declared by the `$.concat`: `bundle.js`. If we commented out every pipe except concat, the resulting bundle file will be all the files in the src directory concatonated. This the file will execute because of the nature of angular, but other than some development convenience you wouldn't be any mileage out of the this tooling process. 
+Like Browserify and Webpack, Gulp declares an entry point, but instead of a file it's an entire directory. For this project we are declaring the `/js` directory. If we look at the last .pipe chain we see the destination directory: `bin/js`. The name of the file is declared by the `$.concat`: `bundle.js`. If we commented out every pipe except concat, the resulting bundle file will be all the files in the src directory concatonated. This the file will execute because of the nature of angular, but other than some development convenience you wouldn't be any mileage out of the this tooling process.
+
 That's why we have the accompanying gulp modules. Gulp-uglify minifies. Gulp-ng-annotate is required for uglifying angular modules, see [https://github.com/Kagami/gulp-ng-annotate](https://github.com/Kagami/gulp-ng-annotate) for details why and how. Long story short, if you don't use it your module will fail in the browswer. Gulp-sourcemaps creates sources maps. That way you can see your source files in a browser's dev tools and be able to step through break points. 
+
 Gulp-babel as it used in this project translates es2015 JS to ecma5. Without this your code will not run in browsers today. 
+
 The point of looking at this and looking at Browserify is that Webpack does the same thing, but in my opinion more elegantly.
- 
+
