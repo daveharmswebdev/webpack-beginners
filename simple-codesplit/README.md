@@ -14,7 +14,7 @@ button.onclick = () => {
 document.body.appendChild(button);
 ```
 
-When our app loads we only want to load what the user will initially see and interact with. And when the user creates an event, like click a button, then our app will load more JS.
+When our app loads we only want to load what the user will initially see and interact with. And when the user creates an event, like click a button, then our app will load more JS. It is the `System.import('./image_viewer')` that tells webpack to create a separate bundle for the image_viewer module. This concept will leveraged for route splitting, which is covered in another section.
 
 For this example, `npm install`, then `npm run build`.
 
